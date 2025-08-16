@@ -10,6 +10,16 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
+If you use [direnv](https://github.com/direnv/direnv/wiki/Python), the virtual environment is created and / or activated automatically whenver you enter the working directory.
+
+Note that you still need to install the requirements.
+
+## Testing
+
+```shell
+pytest
+```
+
 ## References
 
 (1) Textualize Inc, “Textualize.” Accessed: Aug. 09, 2025. [Online]. Available: [https://www.textualize.io/](https://www.textualize.io/)
