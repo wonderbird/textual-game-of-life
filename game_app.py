@@ -1,21 +1,33 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Footer, Header
+from textual.widgets import Log, Footer, Header
 
 
 class GameApp(App):
-	BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
+    CSS_PATH = "style.tcss"
+    BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
 
-	def compose(self) -> ComposeResult:
-		yield Header()
-		yield Footer()
+    def compose(self) -> ComposeResult:
+        yield Header()
+        yield Log(id = "universe")
+        yield Footer()
 
-	def action_toggle_dark(self) -> None:
-		self.theme = (
-			"textual-dark" if self.theme == "textual-light" else "textual-light"
-		)
+    def on_ready(self) -> None:
+        log = self.query_one(Log)
+        log.write_line(" 123456789")
+        log.write_line("1█ █ █ █ █1")
+        log.write_line("2 █ █ █ █ 2")
+        log.write_line("3█ █ █ █ █3")
+        log.write_line("4 █ █ █ █ 4")
+        log.write_line("5█ █ █ █ █5")
+        log.write_line(" 123456789")
+
+    def action_toggle_dark(self) -> None:
+        self.theme = (
+            "textual-dark" if self.theme == "textual-light" else "textual-light"
+        )
 
 
 if __name__ == "__main__":
-	app = GameApp()
-	app.run()
+    app = GameApp()
+    app.run()
 

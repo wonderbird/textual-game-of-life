@@ -1,0 +1,8 @@
+Screen {
+    layout: vertical;
+}
+
+#universe {
+    overflow: hidden hidden;
+}
+
