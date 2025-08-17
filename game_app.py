@@ -31,15 +31,6 @@ class UniverseView:
             " 123456789",
         ]
 
-        self._log.clear()
-        self._log.write_line(" 123456789")
-        self._log.write_line("1         1")
-        self._log.write_line("2         2")
-        self._log.write_line("3         3")
-        self._log.write_line("4         4")
-        self._log.write_line("5         5")
-        self._log.write_line(" 123456789")
-
         for cell in self._cells:
             pass
 
