@@ -32,8 +32,8 @@ class UniverseView:
         ]
 
         for cell in self._cells:
-            affected_line = lines[cell.get_y()]
-            pass
+            affected_line = lines[cell.get_y() + 1]
+            affected_line[cell.get_x()] = "█"
 
         self._log.clear()
         for line in lines:
