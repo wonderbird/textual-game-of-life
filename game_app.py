@@ -21,6 +21,16 @@ class UniverseView:
         self.update()
 
     def update(self) -> None:
+        lines = [
+            " 123456789",
+            "1         1",
+            "2         2",
+            "3         3",
+            "4         4",
+            "5         5",
+            " 123456789",
+        ]
+
         self._log.clear()
         self._log.write_line(" 123456789")
         self._log.write_line("1         1")
