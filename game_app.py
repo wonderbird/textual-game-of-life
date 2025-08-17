@@ -6,7 +6,9 @@ class Cell:
     def __init__(self, x: int, y: int) -> None:
         self._x = x
         self._y = y
-        pass
+
+    def get_x() -> int:
+        return self._x
 
 
 class UniverseView:
