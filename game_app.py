@@ -3,7 +3,7 @@ from textual.widgets import Log, Footer, Header
 
 
 class UniverseView:
-    def __init__(self) -> None:
+    def __init__(self, app: App) -> None:
         pass
 
 
@@ -17,6 +17,7 @@ class GameApp(App):
 
     def __init__(self) -> None:
         super().__init__(self)
+        self._universe_view = None
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -24,6 +25,8 @@ class GameApp(App):
         yield Footer()
 
     def on_ready(self) -> None:
+        self._universe_view = UniverseView(self)
+
         log = self.query_one(Log)
         log.write_line(" 123456789")
         log.write_line("1         1")
