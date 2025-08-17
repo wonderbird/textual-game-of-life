@@ -4,7 +4,7 @@ from textual.widgets import Log, Footer, Header
 
 class UniverseView:
     def __init__(self, app: App) -> None:
-        pass
+        self._log = app.query_one(Log)
 
 
 class GameApp(App):
