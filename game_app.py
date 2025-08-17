@@ -6,14 +6,14 @@ class UniverseView:
     def __init__(self, app: App) -> None:
         self._log = app.query_one(Log)
         log = self._log
-        log.clear()
-        log.write_line(" 123456789")
-        log.write_line("1         1")
-        log.write_line("2         2")
-        log.write_line("3         3")
-        log.write_line("4         4")
-        log.write_line("5         5")
-        log.write_line(" 123456789")
+        self._log.clear()
+        self._log.write_line(" 123456789")
+        self._log.write_line("1         1")
+        self._log.write_line("2         2")
+        self._log.write_line("3         3")
+        self._log.write_line("4         4")
+        self._log.write_line("5         5")
+        self._log.write_line(" 123456789")
 
 
 class GameApp(App):
