@@ -39,6 +39,10 @@ class UniverseView:
         for line in lines:
             self._log.write_line(line)
 
+    def add_cell(self, x: int, y: int):
+        self._cells.append(Cell(x, y))
+        self.update()
+
 
 class GameApp(App):
     CSS_PATH = "style.tcss"
