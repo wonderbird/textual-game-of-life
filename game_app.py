@@ -32,6 +32,7 @@ class UniverseView:
         ]
 
         for cell in self._cells:
+            affected_line = lines[cell.get_y()]
             pass
 
         self._log.clear()
