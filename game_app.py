@@ -4,6 +4,8 @@ from textual.widgets import Log, Footer, Header
 
 class Cell:
     def __init__(self, x: int, y: int) -> None:
+        self._x = x
+        self._y = y
         pass
 
 
