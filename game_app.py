@@ -2,9 +2,15 @@ from textual.app import App, ComposeResult
 from textual.widgets import Log, Footer, Header
 
 
+class Cell:
+    def __init__(self, x: int, y: int) -> None:
+        pass
+
+
 class UniverseView:
     def __init__(self, app: App) -> None:
         self._log = app.query_one(Log)
+        self._cells = []
         self.update()
 
     def update(self) -> None:
