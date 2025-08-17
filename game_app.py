@@ -15,6 +15,9 @@ class GameApp(App):
         ("r", "reset_to_seed", "Reset to seed"),
     ]
 
+    def __init__(self) -> None:
+        super().__init__(self)
+
     def compose(self) -> ComposeResult:
         yield Header()
         yield Log(id="universe")
