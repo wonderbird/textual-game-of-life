@@ -7,6 +7,7 @@ class GameApp(App):
     BINDINGS = [
         ("d", "toggle_dark", "Toggle dark mode"),
         ("n", "produce_next_generation", "Next generation"),
+        ("r", "reset_to_seed", "Reset to seed"),
     ]
 
     def compose(self) -> ComposeResult:
@@ -30,6 +31,17 @@ class GameApp(App):
         log.write_line(" 123456789")
         log.write_line("1         1")
         log.write_line("2         2")
+        log.write_line("3         3")
+        log.write_line("4         4")
+        log.write_line("5         5")
+        log.write_line(" 123456789")
+
+    def action_reset_to_seed(self) -> None:
+        log = self.query_one(Log)
+        log.clear()
+        log.write_line(" 123456789")
+        log.write_line("1         1")
+        log.write_line("2   █     2")
         log.write_line("3         3")
         log.write_line("4         4")
         log.write_line("5         5")
