@@ -4,21 +4,29 @@ Game of Life with Textual UI
 
 ## Development Environment Setup
 
+Setup the virtual environment for python before changing files. If you use [direnv](https://github.com/direnv/direnv/wiki/Python), the virtual environment is created and / or activated automatically whenver you enter the working directory.
+
 ```shell
 python -m venv ./venv
 source ./venv/bin/activate
-pip install -r requirements.txt
 ```
 
-If you use [direnv](https://github.com/direnv/direnv/wiki/Python), the virtual environment is created and / or activated automatically whenver you enter the working directory.
+In a fresh virtual environment, install dependencies and build tools once:
 
-Note that you still need to install the requirements.
+```
+pip install -r requirements.txt
+pre-commit install
+```
 
 ## Testing
 
 ```shell
 pytest
 ```
+
+## Committing changes
+
+[Pre-commit](https://pre-commit.com/) is used to run code quality checks and formatters automatically, before you are allowed to commit. If the tool reports an error, you can inspect the changes it suggests using `git diff`.
 
 ## References
 
