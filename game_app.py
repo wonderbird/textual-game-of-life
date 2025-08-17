@@ -3,7 +3,8 @@ from textual.widgets import Log, Footer, Header
 
 
 class UniverseView:
-    pass
+    def __init__(self) -> None:
+        pass
 
 
 class GameApp(App):
