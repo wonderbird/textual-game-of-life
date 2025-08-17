@@ -10,6 +10,9 @@ class Cell:
     def get_x() -> int:
         return self._x
 
+    def get_y() -> int:
+        return self._y
+
 
 class UniverseView:
     def __init__(self, app: App) -> None:
