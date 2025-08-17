@@ -43,6 +43,10 @@ class UniverseView:
         for cell in self._cells:
             pass
 
+        self._log.clear()
+        for line in lines:
+            self._log.write_line(line)
+
 
 class GameApp(App):
     CSS_PATH = "style.tcss"
