@@ -29,6 +29,7 @@ class GameApp(App):
         self._universe_view = UniverseView(self)
 
         log = self.query_one(Log)
+        log.clear()
         log.write_line(" 123456789")
         log.write_line("1         1")
         log.write_line("2   █     2")
