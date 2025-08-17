@@ -1,2 +1,8 @@
+# Runtime dependencies
 textual
+
+# Test dependencies
 pytest-textual-snapshot
+
+# Code quality tools
+pre-commit

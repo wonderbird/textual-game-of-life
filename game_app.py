@@ -4,11 +4,14 @@ from textual.widgets import Log, Footer, Header
 
 class GameApp(App):
     CSS_PATH = "style.tcss"
-    BINDINGS = [("d", "toggle_dark", "Toggle dark mode"),("n", "produce_next_generation", "Next generation")]
+    BINDINGS = [
+        ("d", "toggle_dark", "Toggle dark mode"),
+        ("n", "produce_next_generation", "Next generation"),
+    ]
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield Log(id = "universe")
+        yield Log(id="universe")
         yield Footer()
 
     def on_ready(self) -> None:
@@ -41,4 +44,3 @@ class GameApp(App):
 if __name__ == "__main__":
     app = GameApp()
     app.run()
-
