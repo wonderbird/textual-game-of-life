@@ -2,6 +2,10 @@ from textual.app import App, ComposeResult
 from textual.widgets import Log, Footer, Header
 
 
+class UniverseView:
+    pass
+
+
 class GameApp(App):
     CSS_PATH = "style.tcss"
     BINDINGS = [
