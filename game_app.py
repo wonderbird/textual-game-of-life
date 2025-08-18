@@ -77,14 +77,6 @@ class GameApp(App):
     def action_produce_next_generation(self) -> None:
         log = self.query_one(Log)
         self._universe_view.update()
-        log.clear()
-        log.write_line(" 123456789")
-        log.write_line("1         1")
-        log.write_line("2         2")
-        log.write_line("3         3")
-        log.write_line("4         4")
-        log.write_line("5         5")
-        log.write_line(" 123456789")
 
     def action_reset_to_seed(self) -> None:
         log = self.query_one(Log)
