@@ -1,6 +1,10 @@
 import logging
 from textual.app import App, ComposeResult
 from textual.widgets import Log, Footer, Header
+from textual.logging import TextualHandler
+
+
+logging.basicConfig(level="NOTSET", handlers=[TextualHandler()])
 
 
 class Cell:
