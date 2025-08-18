@@ -31,6 +31,7 @@ class UniverseView:
         ]
 
         for cell in self._cells:
+            print("Drawing cell {{ x: x, y: y }}")
             affected_line = lines[cell.get_y() + 1]
             affected_line[cell.get_x()] = "█"
 
