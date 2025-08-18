@@ -24,6 +24,14 @@ pre-commit install
 pytest
 ```
 
+## Debugging
+
+Textual comes with a debug console. To connect it to the application, execute the following steps:
+
+1. In a fresh terminal window, run the console: `textual console -x SYSTEM -x EVENT -x WORKER`
+
+2. In another terminal window, run this app in development mode: `textual run --dev game_app.py`
+
 ## Committing changes
 
 [Pre-commit](https://pre-commit.com/) is used to run code quality checks and formatters automatically, before you are allowed to commit. If the tool reports an error, you can inspect the changes it suggests using `git diff`.
