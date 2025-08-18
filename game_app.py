@@ -18,7 +18,6 @@ class UniverseView:
     def __init__(self, app: App) -> None:
         self._log = app.query_one(Log)
         self._cells = []
-        self.update()
 
     def update(self) -> None:
         lines = [
