@@ -62,7 +62,7 @@ class GameApp(App):
         yield Footer()
 
     def on_mount(self) -> None:
-        pass
+        log("The log is now available")
 
     def on_ready(self) -> None:
         self._universe_view = UniverseView(self)
