@@ -22,7 +22,8 @@ class Cell:
 
 class UniverseView:
     def __init__(self, app: App) -> None:
-        self._log = app.query_one(Log)
+        self._app = app
+        self._log = self._app.query_one(Log)
         self._cells = []
 
     def update(self) -> None:
