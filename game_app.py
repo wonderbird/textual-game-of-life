@@ -65,6 +65,7 @@ class GameApp(App):
 
     def on_ready(self) -> None:
         self._universe_view = UniverseView(self)
+        self._universe_view.add_cell(3, 1)
 
         log = self.query_one(Log)
         log.clear()
