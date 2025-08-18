@@ -42,6 +42,9 @@ class UniverseView:
     def add_cell(self, x: int, y: int):
         self._cells.append(Cell(x, y))
 
+    def remove_cell(self, x: int, y: int):
+        self._cells = []
+
 
 class GameApp(App):
     CSS_PATH = "style.tcss"
