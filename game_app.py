@@ -5,6 +5,7 @@ from textual.logging import TextualHandler
 
 
 logging.basicConfig(level=logging.DEBUG, filename="game_app.log")
+logger = logging.getLogger(__name__)
 
 
 class Cell:
