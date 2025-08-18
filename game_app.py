@@ -63,7 +63,6 @@ class GameApp(App):
 
     def on_ready(self) -> None:
         self._universe_view = UniverseView(self)
-        self._universe_view.update()
 
         log = self.query_one(Log)
         log.clear()
@@ -77,6 +76,7 @@ class GameApp(App):
 
     def action_produce_next_generation(self) -> None:
         log = self.query_one(Log)
+        self._universe_view.update()
         log.clear()
         log.write_line(" 123456789")
         log.write_line("1         1")
