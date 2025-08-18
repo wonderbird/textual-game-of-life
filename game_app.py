@@ -1,11 +1,6 @@
-import logging
 from textual.app import App, ComposeResult
 from textual.widgets import Log, Footer, Header
-from textual.logging import TextualHandler
-
-
-logging.basicConfig(level=logging.DEBUG, filename="game_app.log")
-logger = logging.getLogger(__name__)
+from textual import log
 
 
 class Cell:
@@ -38,7 +33,7 @@ class UniverseView:
         ]
 
         for cell in self._cells:
-            self._app.log("Drawing cell {{ x: x, y: y }}")
+            # Log: "Drawing cell {{ x: {cell.get_x()}, y: {cell.get_y()} }}"
             affected_line = lines[cell.get_y() + 1]
             affected_line[cell.get_x()] = "█"
 
