@@ -4,7 +4,7 @@ from textual.widgets import Log, Footer, Header
 from textual.logging import TextualHandler
 
 
-logging.basicConfig(level="NOTSET", handlers=[TextualHandler()])
+logging.basicConfig(level=logging.DEBUG, filename="game_app.log")
 
 
 class Cell:
