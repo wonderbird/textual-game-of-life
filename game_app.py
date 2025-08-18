@@ -78,6 +78,7 @@ class GameApp(App):
 
     def action_produce_next_generation(self) -> None:
         log = self.query_one(Log)
+        self._universe_view.remove_cell(3, 1)
         self._universe_view.update()
 
     def action_reset_to_seed(self) -> None:
