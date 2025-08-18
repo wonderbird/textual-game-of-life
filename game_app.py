@@ -61,6 +61,9 @@ class GameApp(App):
         yield Log(id="universe")
         yield Footer()
 
+    def on_mount(self) -> None:
+        pass
+
     def on_ready(self) -> None:
         self._universe_view = UniverseView(self)
         self._universe_view.add_cell(3, 1)
