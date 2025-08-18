@@ -4,5 +4,6 @@ textual
 # Test dependencies
 pytest-textual-snapshot
 
-# Code quality tools
+# Development tools
+textual-dev
 pre-commit
