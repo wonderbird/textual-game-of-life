@@ -1,6 +1,5 @@
 from textual.app import App, ComposeResult
 from textual.widgets import Log, Footer, Header
-from textual import log
 
 
 class Cell:
@@ -23,28 +22,34 @@ class UniverseView:
 
     def update(self) -> None:
         lines = [
-            " 123456789",
+            " 012345678",
+            "0         0",
             "1         1",
             "2         2",
             "3         3",
             "4         4",
-            "5         5",
-            " 123456789",
+            " 012345678",
         ]
 
         for cell in self._cells:
-            # Log: "Drawing cell {{ x: {cell.get_x()}, y: {cell.get_y()} }}"
-            affected_line = lines[cell.get_y() + 1]
-            affected_line[cell.get_x()] = "█"
+            column = cell.get_x() + 1
+            row = cell.get_y() + 1
+            affected_line = lines[row]
+            left = affected_line[:column]
+            right = affected_line[column + 1 :]
+            lines[row] = left + "█" + right
 
         self._log.clear()
         for line in lines:
             self._log.write_line(line)
 
-    def add_cell(self, x: int, y: int):
+    def add(self, x: int, y: int) -> None:
         self._cells.append(Cell(x, y))
 
-    def remove_cell(self, x: int, y: int):
+    def remove(self, x: int, y: int) -> None:
+        self._cells = []
+
+    def clear(self) -> None:
         self._cells = []
 
 
@@ -62,37 +67,24 @@ class GameApp(App):
         yield Footer()
 
     def on_mount(self) -> None:
-        log("The log is now available")
+        self.log("We can send log messages to the textual console now.")
 
     def on_ready(self) -> None:
+        self.log("Application is ready")
         self._universe_view = UniverseView(self)
-        self._universe_view.add_cell(3, 1)
-
-        log = self.query_one(Log)
-        log.clear()
-        log.write_line(" 123456789")
-        log.write_line("1         1")
-        log.write_line("2   █     2")
-        log.write_line("3         3")
-        log.write_line("4         4")
-        log.write_line("5         5")
-        log.write_line(" 123456789")
+        self._universe_view.add(3, 1)
+        self._universe_view.update()
 
     def action_produce_next_generation(self) -> None:
         log = self.query_one(Log)
-        self._universe_view.remove_cell(3, 1)
+        self._universe_view.remove(3, 1)
         self._universe_view.update()
 
     def action_reset_to_seed(self) -> None:
         log = self.query_one(Log)
-        log.clear()
-        log.write_line(" 123456789")
-        log.write_line("1         1")
-        log.write_line("2   █     2")
-        log.write_line("3         3")
-        log.write_line("4         4")
-        log.write_line("5         5")
-        log.write_line(" 123456789")
+        self._universe_view.clear()
+        self._universe_view.add(3, 1)
+        self._universe_view.update()
 
     def action_toggle_dark(self) -> None:
         self.theme = (

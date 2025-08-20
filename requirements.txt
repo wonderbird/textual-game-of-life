@@ -5,5 +5,5 @@ textual
 pytest-textual-snapshot
 
 # Development tools
-textual-deu
+textual-dev
 pre-commit
