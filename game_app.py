@@ -112,21 +112,6 @@ class GameApp(App):
         self._universe_view.on_produce_next_generation()
 
     def action_reset_to_seed(self) -> None:
-        self._universe_view.clear()
-
-        # Single cell is expected to die in the next generation
-        self._universe_view.add(1, 3)
-
-        # Cluster of cells with 1 neighbor is expected to die in the next generation
-        self._universe_view.add(3, 1)
-        self._universe_view.add(4, 1)
-
-        # Cluster with 2 neighbors for each cell is expected to live in the next generation
-        # self._universe_view.add(7, 2)
-        # self._universe_view.add(7, 3)
-        # self._universe_view.add(6, 3)
-
-        self._universe_view.update()
         self._universe_view.on_reset_to_seed()
 
     def action_toggle_dark(self) -> None:
