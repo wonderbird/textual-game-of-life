@@ -70,7 +70,7 @@ class UniversePresenter:
         # self._model.append(Cell(7, 3))
         # self._model.append(Cell(6, 3))
 
-        self._universe_view.clear()
+        self._view.clear()
         for cell in self._model:
             self._view.add(cell.get_x(), cell.get_y())
 
