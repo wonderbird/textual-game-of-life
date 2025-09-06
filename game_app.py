@@ -44,6 +44,10 @@ class UniverseView:
 
 
 class UniversePresenter:
+    # introduce the universe model and move the universe construction from game app to the model
+    # then the universe model can read the universe from the file universe.toml
+    # https://docs.python.org/3/library/tomllib.html#module-tomllib
+    # https://toml.io/en/v1.0.0#array
     def __init__(self, view: UniverseView) -> None:
         self._view = view
 
