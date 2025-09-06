@@ -13,6 +13,9 @@ class UniverseView:
     def on_produce_next_generation(self) -> None:
         self._presenter.go_to_next_generation()
 
+    def on_reset_to_seed(self) -> None:
+        self._presenter.reset_to_seed()
+
     def update(self) -> None:
         lines = [
             " 012345678",
