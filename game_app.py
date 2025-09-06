@@ -50,6 +50,10 @@ class GameApp(App):
         ("r", "reset_to_seed", "Reset to seed"),
     ]
 
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self._universe_view = None
+
     def compose(self) -> ComposeResult:
         yield Header()
         yield Log(id="universe")
@@ -59,18 +63,15 @@ class GameApp(App):
         self.log("We can send log messages to the textual console now.")
 
     def on_ready(self) -> None:
-        self.log("Application is ready")
         self._universe_view = UniverseView(self)
         self._universe_view.add(3, 1)
         self._universe_view.update()
 
     def action_produce_next_generation(self) -> None:
-        log = self.query_one(Log)
         self._universe_view.remove(3, 1)
         self._universe_view.update()
 
     def action_reset_to_seed(self) -> None:
-        log = self.query_one(Log)
         self._universe_view.clear()
         self._universe_view.add(3, 1)
         self._universe_view.update()
