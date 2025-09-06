@@ -70,6 +70,12 @@ class UniversePresenter:
         # self._model.append(Cell(7, 3))
         # self._model.append(Cell(6, 3))
 
+        self._universe_view.clear()
+        for cell in self._model:
+            self._view.add(cell.get_x(), cell.get_y())
+
+        self._view.update()
+
     def go_to_next_generation(self) -> None:
         self._view.remove(3, 1)
         self._view.update()
