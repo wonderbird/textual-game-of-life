@@ -79,6 +79,12 @@ class GameApp(App):
         # Cluster of cells with 1 neighbor is expected to die in the next generation
         self._universe_view.add(3, 1)
         self._universe_view.add(4, 1)
+
+        # Cluster with 2 neighbors for each cell is expected to live in the next generation
+        # self._universe_view.add(7, 2)
+        # self._universe_view.add(7, 3)
+        # self._universe_view.add(6, 3)
+
         self._universe_view.update()
 
     def action_toggle_dark(self) -> None:
