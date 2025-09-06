@@ -8,7 +8,7 @@ class UniverseView:
         self._app = app
         self._log = self._app.query_one(Log)
         self._cells = []
-        self._presenter = UniversePresenter()
+        self._presenter = UniversePresenter(self)
 
     def update(self) -> None:
         lines = [
@@ -44,7 +44,8 @@ class UniverseView:
 
 
 class UniversePresenter:
-    pass
+    def __init__(self, view: UniverseView) -> None:
+        self._view = view
 
 
 class GameApp(App):
