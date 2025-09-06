@@ -127,6 +127,7 @@ class GameApp(App):
         # self._universe_view.add(6, 3)
 
         self._universe_view.update()
+        self._universe_view.on_reset_to_seed()
 
     def action_toggle_dark(self) -> None:
         self.theme = (
