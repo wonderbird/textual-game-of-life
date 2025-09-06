@@ -10,6 +10,9 @@ class UniverseView:
         self._cells = []
         self._presenter = UniversePresenter(self)
 
+    def on_produce_next_generation(self) -> None:
+        self._presenter.go_to_next_generation()
+
     def update(self) -> None:
         lines = [
             " 012345678",
@@ -50,6 +53,10 @@ class UniversePresenter:
     # https://toml.io/en/v1.0.0#array
     def __init__(self, view: UniverseView) -> None:
         self._view = view
+        self._model = []
+
+    def go_to_next_generation(self) -> None:
+        pass
 
 
 class GameApp(App):
@@ -79,6 +86,7 @@ class GameApp(App):
     def action_produce_next_generation(self) -> None:
         self._universe_view.remove(3, 1)
         self._universe_view.update()
+        self._universe_view.on_produce_next_generation()
 
     def action_reset_to_seed(self) -> None:
         self._universe_view.clear()
