@@ -72,6 +72,11 @@ class GameApp(App):
 
     def action_reset_to_seed(self) -> None:
         self._universe_view.clear()
+
+        # Single cell is expected to die in the next generation
+        self._universe_view.add(1, 3)
+
+        # Cluster of cells with 1 neighbor is expected to die in the next generation
         self._universe_view.add(3, 1)
         self._universe_view.add(4, 1)
         self._universe_view.update()
