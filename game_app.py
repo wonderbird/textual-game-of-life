@@ -56,7 +56,8 @@ class UniversePresenter:
         self._model = []
 
     def go_to_next_generation(self) -> None:
-        pass
+        self._view.remove(3, 1)
+        self._view.update()
 
 
 class GameApp(App):
@@ -84,8 +85,6 @@ class GameApp(App):
         self.action_reset_to_seed()
 
     def action_produce_next_generation(self) -> None:
-        self._universe_view.remove(3, 1)
-        self._universe_view.update()
         self._universe_view.on_produce_next_generation()
 
     def action_reset_to_seed(self) -> None:
