@@ -64,8 +64,7 @@ class GameApp(App):
 
     def on_ready(self) -> None:
         self._universe_view = UniverseView(self)
-        self._universe_view.add(3, 1)
-        self._universe_view.update()
+        self.action_reset_to_seed()
 
     def action_produce_next_generation(self) -> None:
         self._universe_view.remove(3, 1)
