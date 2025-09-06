@@ -55,6 +55,21 @@ class UniversePresenter:
         self._view = view
         self._model = []
 
+    def reset_to_seed(self) -> None:
+        self._model = []
+
+        # Single cell is expected to die in the next generation
+        self._model.append(Cell(1, 3))
+
+        # Cluster of cells with 1 neighbor is expected to die in the next generation
+        self._model.append(Cell(3, 1))
+        self._model.append(Cell(4, 1))
+
+        # Cluster with 2 neighbors for each cell is expected to live in the next generation
+        # self._model.append(Cell(7, 2))
+        # self._model.append(Cell(7, 3))
+        # self._model.append(Cell(6, 3))
+
     def go_to_next_generation(self) -> None:
         self._view.remove(3, 1)
         self._view.update()
