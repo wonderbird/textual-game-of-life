@@ -8,6 +8,7 @@ class UniverseView:
         self._app = app
         self._log = self._app.query_one(Log)
         self._cells = []
+        self._presenter = UniversePresenter()
 
     def update(self) -> None:
         lines = [
@@ -40,6 +41,10 @@ class UniverseView:
 
     def clear(self) -> None:
         self._cells = []
+
+
+class UniversePresenter:
+    pass
 
 
 class GameApp(App):
