@@ -42,7 +42,7 @@ class UniverseView(metaclass=abc.ABCMeta):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def remove(self, x: int, y: int) -> None:
+    def remove(self, cell: Cell) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod

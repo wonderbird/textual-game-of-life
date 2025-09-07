@@ -33,5 +33,5 @@ class UniversePresenter:
         self._view.update()
 
     def go_to_next_generation(self) -> None:
-        self._view.remove(3, 1)
+        self._view.remove(Cell(3, 1))
         self._view.update()
