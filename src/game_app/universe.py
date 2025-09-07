@@ -35,5 +35,5 @@ class Universe:
         for x_y in living_cells_x_y:
             self._living_cells.append(Cell(x_y[0], x_y[1]))
 
-    def get_alive_cells(self):
+    def get_living_cells(self):
         return self._living_cells

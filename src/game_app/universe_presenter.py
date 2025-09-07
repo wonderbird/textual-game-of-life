@@ -12,11 +12,18 @@ class UniversePresenter:
         self._universe.reset()
 
         self._view.clear()
-        for cell in self._universe.get_alive_cells():
+        for cell in self._universe.get_living_cells():
             self._view.add(cell)
 
         self._view.update()
 
     def go_to_next_generation(self) -> None:
+        currently_living_cells = set(self._universe.get_living_cells())
+        next_living_cells = set(self._universe.get_living_cells())
+        dying_cells = currently_living_cells - next_living_cells
+
+        for cell in dying_cells:
+            self._view.remove(cell)
+
         self._view.remove(Cell(3, 1))
         self._view.update()
