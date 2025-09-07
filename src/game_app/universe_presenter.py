@@ -19,6 +19,7 @@ class UniversePresenter:
 
     def go_to_next_generation(self) -> None:
         currently_living_cells = set(self._universe.get_living_cells())
+        self._universe.go_to_next_generation()
         next_living_cells = set(self._universe.get_living_cells())
         dying_cells = currently_living_cells - next_living_cells
 

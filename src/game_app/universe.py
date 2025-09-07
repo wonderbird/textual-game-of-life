@@ -37,3 +37,6 @@ class Universe:
 
     def get_living_cells(self):
         return self._living_cells
+
+    def go_to_next_generation(self):
+        self._living_cells = []
