@@ -1,3 +1,5 @@
+import tomllib
+
 from game_app.cell import Cell
 from game_app.universe_view import UniverseView
 
@@ -16,6 +18,8 @@ class UniversePresenter:
         toml_string = """
             alive_cells = [[1, 3], [3, 1], [4, 1]]
             """
+        data = tomllib.loads(toml_string)
+
         cells_as_nested_list = [[1, 3], [3, 1], [4, 1]]
         for cell_coordinates in cells_as_nested_list:
             self._model.append(Cell(cell_coordinates[0], cell_coordinates[1]))
