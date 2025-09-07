@@ -43,8 +43,7 @@ class TextualUniverseView(UniverseView):
             self._log.write_line(line)
 
     # TODO use cell instead of x, y
-    def add(self, x: int, y: int) -> None:
-        cell = Cell(x, y)
+    def add(self, x: int, y: int, cell) -> None:
         self._cells.append(cell)
 
     # TODO use cell instead of x, y

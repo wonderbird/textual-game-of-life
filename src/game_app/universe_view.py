@@ -1,5 +1,7 @@
 import abc
 
+from game_app.cell import Cell
+
 
 # Interface for the Universe View
 #
@@ -36,7 +38,7 @@ class UniverseView(metaclass=abc.ABCMeta):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def add(self, x: int, y: int) -> None:
+    def add(self, x: int, y: int, cell: Cell) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod

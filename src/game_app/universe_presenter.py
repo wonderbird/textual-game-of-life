@@ -28,7 +28,7 @@ class UniversePresenter:
 
         self._view.clear()
         for cell in self._model:
-            self._view.add(cell.get_x(), cell.get_y())
+            self._view.add(cell.get_x(), cell.get_y(), cell)
 
         self._view.update()
 
