@@ -21,7 +21,7 @@ class UniversePresenter:
         # self._model.append(Cell(6, 3))
 
         self._view.clear()
-        for cell in self._model:
+        for cell in self._universe.get_alive_cells():
             self._view.add(cell)
 
         self._view.update()
