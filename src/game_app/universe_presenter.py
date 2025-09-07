@@ -1,5 +1,3 @@
-import tomllib
-
 from game_app.cell import Cell
 from game_app.universe import Universe
 from game_app.universe_view import UniverseView
