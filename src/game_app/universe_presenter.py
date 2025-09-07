@@ -13,6 +13,11 @@ class UniversePresenter:
         # https://toml.io/en/v1.0.0#array
         self._model = []
 
+        cells_as_nested_list = [[1, 3], [3, 1], [4, 1]]
+        for cell_coordinates in cells_as_nested_list:
+            self._model.append(Cell(cell_coordinates[0], cell_coordinates[1]))
+
+        self._model = []
         # Single cell is expected to die in the next generation
         self._model.append(Cell(1, 3))
 
