@@ -15,7 +15,7 @@ class UniversePresenter:
         # Read the universe from a "universe.toml" in the current directory
         # https://docs.python.org/3/library/tomllib.html#module-tomllib
         # https://toml.io/en/v1.0.0#array
-
+        self._universe.reset()
         configuration_file = "universe.toml"
 
         with open(configuration_file, "rb") as f:
