@@ -9,11 +9,11 @@ class Universe:
         self._living_cells = []
         self.reset()
 
-    def reset(self):
-        self._living_cells = self._universe_seed.copy()
-
     def get_living_cells(self):
         return self._living_cells
+
+    def reset(self):
+        self._living_cells = self._universe_seed.copy()
 
     def go_to_next_generation(self):
         self._living_cells = []
