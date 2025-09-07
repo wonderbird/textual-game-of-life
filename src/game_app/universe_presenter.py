@@ -8,12 +8,10 @@ from game_app.universe_view import UniverseView
 class UniversePresenter:
     def __init__(self, view: UniverseView) -> None:
         self._view = view
-        self._model = []
         self._universe = Universe()
 
     def reset_to_seed(self) -> None:
         self._universe.reset()
-        self._model = self._universe.get_alive_cells()
 
         # Cluster with 2 neighbors for each cell is expected to live in the next generation
         # self._model.append(Cell(7, 2))
