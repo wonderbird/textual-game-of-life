@@ -1,10 +1,11 @@
 import tomllib
 
 from game_app.cell import Cell
+from game_app.universe_reader import UniverseReader
 
 
 class Universe:
-    def __init__(self) -> None:
+    def __init__(self, reader: UniverseReader) -> None:
         """Initialize by reading "universe.toml" in the current directory.
 
         Replaces the internal state by the living cells specified in the file.
