@@ -5,7 +5,7 @@
 The system follows a **Model-View-Presenter (MVP)** pattern with clear separation of concerns:
 
 - **Model**: Universe state and Game of Life logic
-- **View**: Textual-based UI rendering and user interactions  
+- **View**: Textual-based UI rendering and user interactions
 - **Presenter**: Coordination between model and view
 
 ## Core Components
@@ -96,7 +96,7 @@ The system follows a **Model-View-Presenter (MVP)** pattern with clear separatio
 GameApp
   ↓ creates
 TextualUniverseView
-  ↓ contains  
+  ↓ contains
 UniversePresenter
   ↓ manages
 Cell[] (model)

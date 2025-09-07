@@ -7,7 +7,7 @@ A Python implementation of Conway's Game of Life using the Textual framework for
 ## Core Requirements
 
 - **Interactive Conway's Game of Life**: Full implementation of the classic cellular automaton rules
-- **Terminal-based UI**: Rich, responsive interface using Textual framework  
+- **Terminal-based UI**: Rich, responsive interface using Textual framework
 - **Real-time visualization**: Display living/dead cells in an engaging terminal format
 - **User controls**: Navigation and interaction through keyboard bindings
 - **Generation management**: Step through generations manually or automatically

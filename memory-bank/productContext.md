@@ -14,7 +14,7 @@ Conway's Game of Life serves as an excellent introduction to:
 
 This project showcases:
 
-- **Modern terminal capabilities**: Beyond simple text output to rich, interactive interfaces  
+- **Modern terminal capabilities**: Beyond simple text output to rich, interactive interfaces
 - **Clean architecture patterns**: MVP/presenter patterns in Python applications
 - **Test-driven development**: Proper testing practices for UI applications
 
@@ -58,7 +58,7 @@ This project showcases:
 
 1. **Launch**: Start application, see initial seed pattern
 2. **Explore**: Use 'n' key to step through generations
-3. **Experiment**: Reset with 'r', try different visual modes with 'd'  
+3. **Experiment**: Reset with 'r', try different visual modes with 'd'
 4. **Learn**: Observe emergence and behavior patterns
 5. **Develop**: For programmers, examine code structure and extend
 

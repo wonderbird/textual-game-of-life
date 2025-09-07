@@ -82,7 +82,7 @@ python -m game_app.game_app
 # Development mode with debug console
 textual run --dev game_app.game_app:GameApp
 
-# Debug console (separate terminal)  
+# Debug console (separate terminal)
 textual console -x SYSTEM -x EVENT -x WORKER
 ```
 
@@ -111,7 +111,7 @@ src/game_app/
 ├── __init__.py          # Package initialization
 ├── game_app.py          # Main application entry point
 ├── universe_view.py     # Abstract view interface
-├── textual_universe_view.py  # Textual-specific view implementation  
+├── textual_universe_view.py  # Textual-specific view implementation
 ├── universe_presenter.py     # Business logic coordinator
 └── cell.py             # Core data structure
 ```

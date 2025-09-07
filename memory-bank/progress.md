@@ -71,7 +71,7 @@
 **Optimization Needs**
 
 - ❌ **Efficient cell removal**: Currently clears all cells instead of selective removal
-- ❌ **Larger universe support**: Scale beyond current 8x8 limitation  
+- ❌ **Larger universe support**: Scale beyond current 8x8 limitation
 - ❌ **Smooth animations**: Potential for timed generation advancement
 - ❌ **Pattern recognition**: Detect oscillators, still lifes, gliders
 
