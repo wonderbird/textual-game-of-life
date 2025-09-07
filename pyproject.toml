@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "game_app"
+version = "0.0.1"
+authors = [
+  { name="Stefan Boos", email="kontakt@boos.systems" },
+]
+description = "Game of Life with Textual UI"
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+license-files = [ "./LICENSE" ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/wonderbird/textual-game-of-life"
+"Bug Tracker" = "https://github.com/wonderbird/textual-game-of-life"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/game_app"]
