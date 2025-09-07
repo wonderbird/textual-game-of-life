@@ -15,10 +15,9 @@ class UniversePresenter:
         # https://toml.io/en/v1.0.0#array
         self._model = []
 
-        toml_string = """
-            alive_cells_x_y = [[1, 3], [3, 1], [4, 1]]
-            """
-        data = tomllib.loads(toml_string)
+        configuration_file = "universe.toml"
+        with open(configuration_file, "rb") as f:
+            data = tomllib.load(f)
 
         alive_cells_x_y = data.get("alive_cells_x_y")
         for x_y in alive_cells_x_y:
