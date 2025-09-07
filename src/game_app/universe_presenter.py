@@ -3,15 +3,14 @@ from game_app.universe_view import UniverseView
 
 
 class UniversePresenter:
-    # introduce the universe model and move the universe construction from game app to the model
-    # then the universe model can read the universe from the file universe.toml
-    # https://docs.python.org/3/library/tomllib.html#module-tomllib
-    # https://toml.io/en/v1.0.0#array
     def __init__(self, view: UniverseView) -> None:
         self._view = view
         self._model = []
 
     def reset_to_seed(self) -> None:
+        # TODO: Next is to read the universe from a file named universe.toml
+        # https://docs.python.org/3/library/tomllib.html#module-tomllib
+        # https://toml.io/en/v1.0.0#array
         self._model = []
 
         # Single cell is expected to die in the next generation
