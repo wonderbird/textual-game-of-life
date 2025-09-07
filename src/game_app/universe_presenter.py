@@ -11,11 +11,6 @@ class UniversePresenter:
     def reset_to_seed(self) -> None:
         self._universe.reset()
 
-        # Cluster with 2 neighbors for each cell is expected to live in the next generation
-        # self._model.append(Cell(7, 2))
-        # self._model.append(Cell(7, 3))
-        # self._model.append(Cell(6, 3))
-
         self._view.clear()
         for cell in self._universe.get_alive_cells():
             self._view.add(cell)

@@ -42,11 +42,9 @@ class TextualUniverseView(UniverseView):
         for line in lines:
             self._log.write_line(line)
 
-    # TODO use cell instead of x, y
     def add(self, cell: Cell) -> None:
         self._cells.append(cell)
 
-    # TODO use cell instead of x, y
     def remove(self, cell: Cell) -> None:
         self._cells = []
 
