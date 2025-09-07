@@ -13,13 +13,6 @@ class UniversePresenter:
 
     def reset_to_seed(self) -> None:
         self._universe.reset()
-        configuration_file = "universe.toml"
-
-        with open(configuration_file, "rb") as f:
-            data = tomllib.load(f)
-
-        alive_cells_x_y = data.get("alive_cells_x_y")
-
         self._model = self._universe.get_alive_cells()
 
         # Cluster with 2 neighbors for each cell is expected to live in the next generation
