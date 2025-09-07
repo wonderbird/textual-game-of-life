@@ -16,13 +16,13 @@ class UniversePresenter:
         self._model = []
 
         toml_string = """
-            alive_cells = [[1, 3], [3, 1], [4, 1]]
+            alive_cells_x_y = [[1, 3], [3, 1], [4, 1]]
             """
         data = tomllib.loads(toml_string)
 
-        cells_as_nested_list = data.get("alive_cells")
-        for cell_coordinates in cells_as_nested_list:
-            self._model.append(Cell(cell_coordinates[0], cell_coordinates[1]))
+        alive_cells_x_y = data.get("alive_cells_x_y")
+        for x_y in alive_cells_x_y:
+            self._model.append(Cell(x_y[0], x_y[1]))
 
         # Cluster with 2 neighbors for each cell is expected to live in the next generation
         # self._model.append(Cell(7, 2))
