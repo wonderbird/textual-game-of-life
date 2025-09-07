@@ -9,14 +9,6 @@ class Universe:
         self._living_cells = []
         self.reset()
 
-    def read(self) -> list[list[int]]:
-        configuration_file = "universe.toml"
-
-        with open(configuration_file, "rb") as f:
-            data = tomllib.load(f)
-
-        return data.get("living_cells_x_y")
-
     def reset(self):
         self._living_cells = self._universe_seed.copy()
 
