@@ -6,7 +6,7 @@ from game_app.universe_view import UniverseView
 class UniversePresenter:
     def __init__(self, view: UniverseView) -> None:
         self._view = view
-        self._universe = Universe(UniverseReader())
+        self._universe = Universe()
 
     def reset_to_seed(self) -> None:
         self._universe.reset()
