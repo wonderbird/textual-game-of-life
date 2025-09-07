@@ -23,9 +23,7 @@ class UniversePresenter:
 
         alive_cells_x_y = data.get("alive_cells_x_y")
 
-        self._model = []
-        for x_y in alive_cells_x_y:
-            self._model.append(Cell(x_y[0], x_y[1]))
+        self._model = self._universe.get_alive_cells()
 
         # Cluster with 2 neighbors for each cell is expected to live in the next generation
         # self._model.append(Cell(7, 2))

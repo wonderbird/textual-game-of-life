@@ -19,3 +19,6 @@ class Universe:
         self._alive_cells = []
         for x_y in alive_cells_x_y:
             self._alive_cells.append(Cell(x_y[0], x_y[1]))
+
+    def get_alive_cells(self):
+        return self._alive_cells
