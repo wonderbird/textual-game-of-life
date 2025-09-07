@@ -20,7 +20,7 @@ class UniversePresenter:
             """
         data = tomllib.loads(toml_string)
 
-        cells_as_nested_list = [[1, 3], [3, 1], [4, 1]]
+        cells_as_nested_list = data.get("alive_cells")
         for cell_coordinates in cells_as_nested_list:
             self._model.append(Cell(cell_coordinates[0], cell_coordinates[1]))
 
