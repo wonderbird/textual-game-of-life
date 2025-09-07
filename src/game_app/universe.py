@@ -1,32 +1,11 @@
 import tomllib
 
 from game_app.cell import Cell
-from game_app.universe_reader import UniverseReader
 
 
 class Universe:
-    def __init__(self) -> None:
-        """Initialize by reading "universe.toml" in the current directory.
-
-        Replaces the internal state by the living cells specified in the file.
-
-        Example file:
-
-        ```toml
-        living_cells_x_y = [[1, 3], [2, 3]]
-        ```
-
-        Documentation for parsing TOML:
-
-        - https://docs.python.org/3/library/tomllib.html#module-tomllib
-        - https://toml.io/en/v1.0.0#array
-        """
-        living_cells_x_y = self.read()
-
-        self._universe_seed = []
-        for x_y in living_cells_x_y:
-            self._universe_seed.append(Cell(x_y[0], x_y[1]))
-
+    def __init__(self, universe_seed: list[Cell]) -> None:
+        self._universe_seed = universe_seed.copy()
         self._living_cells = []
         self.reset()
 
