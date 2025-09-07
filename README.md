@@ -4,7 +4,7 @@ Game of Life with Textual UI
 
 ## Development Environment Setup
 
-Setup the virtual environment for python before changing files. If you use [direnv](https://github.com/direnv/direnv/wiki/Python), the virtual environment is created and / or activated automatically whenver you enter the working directory.
+Setup the virtual environment for python before changing files. If you use [direnv](https://github.com/direnv/direnv/wiki/Python), the virtual environment is created and / or activated automatically whenever you enter the working directory.
 
 ```shell
 python -m venv ./venv
@@ -16,6 +16,12 @@ In a fresh virtual environment, install dependencies and build tools once:
 ```
 pip install -r requirements.txt
 pre-commit install
+```
+
+Install the game_app module in development mode:
+
+```shell
+pip install --editable .
 ```
 
 ## Testing
@@ -30,7 +36,13 @@ Textual comes with a debug console. To connect it to the application, execute th
 
 1. In a fresh terminal window, run the console: `textual console -x SYSTEM -x EVENT -x WORKER`
 
-2. In another terminal window, run this app in development mode: `textual run --dev src/game_app/game_app.py`
+2. In another terminal window, run this app in development mode: `textual run --dev game_app.game_app:GameApp`
+
+You can also run the application as a python module:
+
+```shell
+python -m game_app.game_app
+```
 
 ## Committing changes
 
