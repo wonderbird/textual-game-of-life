@@ -10,16 +10,18 @@ class UniversePresenter:
         self._model = []
 
     def reset_to_seed(self) -> None:
-        # TODO: Next is to read the universe from a file named universe.toml
+        # Read the universe from a "universe.toml" in the current directory
         # https://docs.python.org/3/library/tomllib.html#module-tomllib
         # https://toml.io/en/v1.0.0#array
-        self._model = []
 
         configuration_file = "universe.toml"
+
         with open(configuration_file, "rb") as f:
             data = tomllib.load(f)
 
         alive_cells_x_y = data.get("alive_cells_x_y")
+
+        self._model = []
         for x_y in alive_cells_x_y:
             self._model.append(Cell(x_y[0], x_y[1]))
 
