@@ -1,6 +1,7 @@
 import tomllib
 
 from game_app.cell import Cell
+from game_app.universe import Universe
 from game_app.universe_view import UniverseView
 
 
@@ -8,6 +9,7 @@ class UniversePresenter:
     def __init__(self, view: UniverseView) -> None:
         self._view = view
         self._model = []
+        self._universe = Universe()
 
     def reset_to_seed(self) -> None:
         # Read the universe from a "universe.toml" in the current directory
