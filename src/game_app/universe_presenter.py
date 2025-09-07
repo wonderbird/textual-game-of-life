@@ -17,14 +17,6 @@ class UniversePresenter:
         for cell_coordinates in cells_as_nested_list:
             self._model.append(Cell(cell_coordinates[0], cell_coordinates[1]))
 
-        self._model = []
-        # Single cell is expected to die in the next generation
-        self._model.append(Cell(1, 3))
-
-        # Cluster of cells with 1 neighbor is expected to die in the next generation
-        self._model.append(Cell(3, 1))
-        self._model.append(Cell(4, 1))
-
         # Cluster with 2 neighbors for each cell is expected to live in the next generation
         # self._model.append(Cell(7, 2))
         # self._model.append(Cell(7, 3))
