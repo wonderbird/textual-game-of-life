@@ -26,5 +26,4 @@ class UniversePresenter:
         for cell in dying_cells:
             self._view.remove(cell)
 
-        self._view.remove(Cell(3, 1))
         self._view.update()
