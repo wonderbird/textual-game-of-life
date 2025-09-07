@@ -36,16 +36,6 @@ class Universe:
         - https://toml.io/en/v1.0.0#array
         """
         self._living_cells = self._universe_seed.copy()
-        configuration_file = "universe.toml"
-
-        with open(configuration_file, "rb") as f:
-            data = tomllib.load(f)
-
-        living_cells_x_y = data.get("living_cells_x_y")
-
-        self._living_cells = []
-        for x_y in living_cells_x_y:
-            self._living_cells.append(Cell(x_y[0], x_y[1]))
 
     def get_living_cells(self):
         return self._living_cells
